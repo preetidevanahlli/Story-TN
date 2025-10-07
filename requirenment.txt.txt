@@ -1,0 +1,27 @@
+You are asking for a `.txt` file, which is often used for a list of dependencies. Since this is a Next.js project, the dependencies are managed in `package.json`, but the equivalent information is provided below in plain text format.
+
+Here is the content for a conceptual file named **`INSTALL_DEPENDENCIES.txt`**, listing the main commands to set up the project:
+
+```txt
+# Project Setup Commands (for Command Prompt or PowerShell)
+
+# 1. Install required dependencies (next-auth, prisma, stripe, etc.)
+pnpm add next-auth@4 bcrypt prisma @prisma/client stripe @stripe/stripe-js zod
+
+# 2. Initialize the Prisma database (uses SQLite by default)
+pnpm dlx prisma init --datasource-provider sqlite
+pnpm dlx prisma migrate dev --name init
+
+# 3. Generate a secure secret for NEXTAUTH_SECRET (copy the output)
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+# 4. START THE SERVER (make sure to set NEXTAUTH_SECRET in your .env file first)
+pnpm dev
+
+# --- .env FILE CONTENT ---
+# Create a file named .env in the root directory and add this, 
+# replacing the placeholder with the secret generated in step 3.
+#
+# NEXTAUTH_SECRET=put_the_hex_from_step_3_here
+# NEXTAUTH_URL=http://localhost:3000
+```
