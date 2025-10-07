@@ -25,3 +25,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# python virtual environment
+venv/
+
+# database
+prisma/dev.db
+
+# separate repository
+rtvc/
